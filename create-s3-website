@@ -10,8 +10,11 @@
 # browsers want to 'download' not 'display' the files
 #-------------------------------------------------------
 
-# need a unique name here
-MY_BUCKET_NAME="my_bucket"
+# MY_BUCKET_NAME must be valid and unique
+# this should usually get you a unique name
+
+NOW=`date +%s`
+MY_BUCKET_NAME="testbucket-$NOW"
 
 # edit to change your desired region
 MY_REGION="us-east-1"
