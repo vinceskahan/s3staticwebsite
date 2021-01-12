@@ -33,9 +33,7 @@ MY_ERROR_FILE="error.html"
 MY_CANNED_ACL="public_read"
 
 #--- static website config ---
-if [ ! -f ${MY_WEBSITE_CONFIG} ]
-then
-    cat > website.json <<- EOF
+cat > website.json <<- EOF
 {
     "IndexDocument": {
         "Suffix": "${MY_INDEX_FILE}"
@@ -45,12 +43,9 @@ then
     }
 }
 EOF
-fi
 
 #--- bucket policy ---
-if [ ! -f ${MY_BUCKET_POLICY} ]
-then
-    cat > ${MY_BUCKET_POLICY} <<EOF
+cat > ${MY_BUCKET_POLICY} <<EOF
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -68,12 +63,9 @@ then
     ]
 }
 EOF
-fi
 
 #--- index file ---
-if [ ! -f ${MY_INDEX_FILE} ]
-then
-    cat > ${MY_INDEX_FILE} <<EOF
+cat > ${MY_INDEX_FILE} <<EOF
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
     <title>My Website Home Page</title>
@@ -84,12 +76,9 @@ then
 </body>
 </html>
 EOF
-fi
 
 #--- error file ---
-if [ ! -f ${MY_ERROR_FILE} ]
-then
-    cat > ${MY_ERROR_FILE} <<EOF
+cat > ${MY_ERROR_FILE} <<EOF
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head>
     <title>My Website Error Page</title>
@@ -100,7 +89,6 @@ then
 </body>
 </html>
 EOF
-fi
 
 #---- do it to it ----
 #---- do it to it ----
